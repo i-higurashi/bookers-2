@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+<% if user_signed_in? %>
+
+
+
+<header>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h2 class="navbar-brand">
+        Bookers
+      </h2>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="navbarEexample7">
+      <ul class="nav navbar-nav navbar-right">
+       <li><%= link_to "home", user_path(current_user),class: "glyphicon glyphicon-home" %></li>
+       <li><%= link_to "user", users_path, class: "users glyphicon glyphicon-user" %></li>
+       <li><%= link_to "books", books_path, class: "books glyphicon glyphicon-book" %></li>
+       <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out" %></li>
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+</header>
+
+ <% else %>
+
+<header>
+
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h1 class="navbar-brand">
+        Bookers
+      </h1>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="navbarEexample7">
+      <ul class="nav navbar-nav navbar-right">
+       <li><%= link_to "Home", top_path ,class: "home glyphicon glyphicon-home" %></li>
+       <li><%= link_to "Abut", show_path ,class: "abuut glyphicon glyphicon-link" %></li>
+       <li><%= link_to "sign up", new_user_registration_path ,class: "sign_up glyphicon glyphicon-edit" %></li>
+       <li><%= link_to "login", new_user_session_path ,class: "sign_in glyphicon glyphicon-share" %></li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+  <% end %>
+
+  <body>
+    <%= yield %>
+
+  </body>
+</html>
+
+ <p class="text-right">CopyRight Infratop.inc</p>
+
+

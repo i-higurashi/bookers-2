@@ -1,0 +1,39 @@
+
+
+
+<div class="container bo">
+
+  <div class="row">
+    <div class="col-xs-3">
+
+    <h2>User info</h2>
+
+
+<div class="row">
+
+ <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg", size:"100x100" %>
+</div>
+
+
+
+   <table class="table">
+    <tbody>
+      <tr>
+        <th class="profile-name">name</th>
+        <td><%= user.name %></td>
+      </tr>
+
+      <tr>
+        <th>Introduction</th>
+        <td><%= user.introduction %></td>
+      </tr>
+  </tbody>
+   </table>
+
+
+
+
+
+    <%= link_to edit_user_path(current_user), class: 'btn btn-default col-xs-12 edit_user_#{current_user.id}' do %>
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+<% end %>
