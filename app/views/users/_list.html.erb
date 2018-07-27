@@ -32,8 +32,23 @@
 
 
 
+<% if current_user != user %>
 
-
-    <%= link_to edit_user_path(current_user), class: "edit_user_#{current_user.id} btn btn-default col-xs-12" do %>
+    <%= link_to user_path(current_user), class: "user_#{current_user.id} btn btn-default col-xs-12" do %>
 <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 <% end %>
+
+<% else %>
+
+  <%= link_to edit_user_path(current_user), class: "edit_user_#{current_user.id} btn btn-default col-xs-12" do %>
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+<% end %>
+
+
+  <% end %>
+
+
+
+
+
+

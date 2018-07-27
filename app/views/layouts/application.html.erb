@@ -33,7 +33,7 @@
     
     <div class="collapse navbar-collapse" id="navbarEexample7">
       <ul class="nav navbar-nav navbar-right">
-       <li><%= link_to "home", user_path(current_user),class: "glyphicon glyphicon-home" %></li>
+       <li><%= link_to "home", user_path(current_user),class: "home glyphicon glyphicon-home" %></li>
        <li><%= link_to "user", users_path, class: "users glyphicon glyphicon-user" %></li>
        <li><%= link_to "books", books_path, class: "books glyphicon glyphicon-book" %></li>
        <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "logout glyphicon glyphicon-log-out" %></li>
